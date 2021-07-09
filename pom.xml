@@ -12,6 +12,7 @@
     <modules>
         <module>product-categories-model</module>
         <module>product-categories-test-database</module>
+        <module>web-app</module>
     </modules>
 
     <properties>

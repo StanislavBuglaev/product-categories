@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Products</title>
@@ -16,7 +16,6 @@
     <table align="center" border="1">
         <thead>
         <tr>
-            <th bgcolor="#778899" height="25" width="80">Product code</th>
             <th bgcolor="#778899" height="25" width="650">Product name</th>
             <th bgcolor="#778899" height="25" width="650">Category name</th>
             <th bgcolor="#778899" height="25" width="80">Price</th>
@@ -24,35 +23,14 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <td align="center" height="25">1</td>
-            <td height="25">Football ball</td>
-            <td height="25">Sports products</td>
-            <td align="center" height="25">800</td>
+        <tr th:each="product : ${products}">
+            <td th:text="${product.productName}" height="25">Football ball</td>
+            <td th:text="${category.categoryName}" height="25">Sports products</td>
+            <td th:text="${product.productPrice}" align="center" height="25">800</td>
             <td align="center" height="25">
-                <a href="editProduct.html">Edit</a>
+                <a href="editProduct.html" th:href="@{|/editProduct/${product.productId}|}">Edit</a>
                 &nbsp &nbsp
-                <a href="deleteProduct.html">Delete</a></td>
-        </tr>
-        <tr>
-            <td align="center" height="25">2</td>
-            <td height="25">Dog food</td>
-            <td height="25">Zoo products</td>
-            <td align="center" height="25">120</td>
-            <td align="center" height="25">
-                <a href="editProduct.html">Edit</a>
-                &nbsp &nbsp
-                <a href="deleteProduct.html">Delete</a></td>
-        </tr>
-        <tr>
-            <td align="center" height="25">3</td>
-            <td height="25">Cat food</td>
-            <td height="25">Zoo products</td>
-            <td align="center" height="25">120</td>
-            <td align="center" height="25">
-                <a href="editProduct.html">Edit</a>
-                &nbsp &nbsp
-                <a href="deleteProduct.html">Delete</a></td>
+                <a href="product.html" th:href="@{|/products/${product.productId}|}">Delete</a></td>
         </tr>
         </tbody>
     </table>

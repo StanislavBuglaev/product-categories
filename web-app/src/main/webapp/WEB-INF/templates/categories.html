@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Category</title>
@@ -16,30 +16,19 @@
     <table align="center" border="1">
         <thead>
         <tr>
-            <th bgcolor="#778899" height="25" width="80">category code</th>
             <th bgcolor="#778899" height="25" width="650">Category name</th>
             <th bgcolor="#778899" height="25" width="80">Quantity of goods</th>
             <th bgcolor="#778899" height="25" width="250"><a href="addCategory.html">Add category</a></th>
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <td align="center" height="25">1</td>
-            <td height="25">Zoo products</td>
-            <td align="center" height="25">2</td>
+        <tr th:each="category : ${categories}">
+            <td th:text="${category.categoryName}" height="25">Zoo products</td>
+            <td th:text="${category.quantityOfGoods}" align="center" height="25">2</td><!--- ???????????? count() column-->
             <td align="center" height="25">
-                <a href="editCategory.html">Edit</a>
+                <a href="editCategory.html" th:href="@{|/editCategory/${category.categoryId}|}">Edit</a>
                 &nbsp &nbsp
-                <a href="deleteCategory.html">Delete</a></td>
-        </tr>
-        <tr>
-            <td align="center" height="25">2</td>
-            <td height="25">Sports products</td>
-            <td align="center" height="25">1</td>
-            <td align="center" height="25">
-                <a href="editCategory.html">Edit</a>
-                &nbsp &nbsp
-                <a href="deleteCategory.html">Delete</a></td>
+                <a href="category.html" th:href="@{|/categories/${category.categoryId}|}">Delete</a></td>
         </tr>
         </tbody>
     </table>

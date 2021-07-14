@@ -16,5 +16,5 @@ create table products
     product_price double,
     category_categoryId int,
     primary key(product_id),
-    foreign key(category_categoryId) references (category_id)
+    foreign key(category_categoryId) references categories(category_id)
 );

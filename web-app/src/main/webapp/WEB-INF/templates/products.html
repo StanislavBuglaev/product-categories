@@ -19,13 +19,13 @@
             <th bgcolor="#778899" height="25" width="650">Product name</th>
             <th bgcolor="#778899" height="25" width="650">Category name</th>
             <th bgcolor="#778899" height="25" width="80">Price</th>
-            <th bgcolor="#778899" height="25" width="250"><a href="addProduct.html">Add product</a></th>
+            <th bgcolor="#778899" height="25" width="250"><a href="addProduct.html" hidden>Add product</a></th>
         </tr>
         </thead>
         <tbody>
         <tr th:each="product : ${products}">
             <td th:text="${product.productName}" height="25">Football ball</td>
-            <td th:text="${category.categoryName}" height="25">Sports products</td>
+            <td th:text="${product.categoryName}" height="25">Sports products</td>
             <td th:text="${product.productPrice}" align="center" height="25">800</td>
             <td align="center" height="25">
                 <a href="editProduct.html" th:href="@{|/editProduct/${product.productId}|}">Edit</a>

@@ -26,9 +26,15 @@
             <td th:text="${category.categoryName}" height="25">Zoo products</td>
             <td th:text="${category.quantityOfGoods}" align="center" height="25">2</td><!--- ???????????? count() column-->
             <td align="center" height="25">
+                <br>
                 <a href="editCategory.html" th:href="@{|/editCategory/${category.categoryId}|}">Edit</a>
                 &nbsp &nbsp
-                <a href="category.html" th:href="@{|/categories/${category.categoryId}|}">Delete</a></td>
+                &nbsp &nbsp
+                <a href="categories.html" th:href="@{|/categories/${category.categoryId}|}">Delete</a>
+                &nbsp &nbsp
+                &nbsp &nbsp
+            <hr>
+                <a href="editCategory.html" th:href="@{|/addProduct/${category.categoryId}|}">Add product</a></td>
         </tr>
         </tbody>
     </table>

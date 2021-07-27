@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Edit category</title>
@@ -8,14 +8,20 @@
 <header>
     <h1>Edit category</h1>
 </header>
-<section>
-    <form>
+<section id="category">
+    <form action="categories.html"
+    id="editCategoryForm"
+    th:action="@{${#httpServletRequest.servletPath}}"
+    th:method="@{post}"
+    th:object="${category}">
+        <input th:name="categoryId" th:type="text" th:value="${categoryId}"  size="50" type="text" hidden>
         <p><label>Category name</label></p>
-        <input size="50" type="text">
+        <input th:field="*{categoryName}" size="50" type="text">
         <br>
         <br>
         <a href="categories.html">Cancel</a>
-        <a href="categories.html">Save</a>
+        <a href="categories.html" th:href="@{/categories}"
+           th:onclick="@{document.forms['editCategoryForm'].submit(); return false;}">Save</a>
     </form>
 </section>
 <footer>

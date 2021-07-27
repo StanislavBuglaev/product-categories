@@ -22,6 +22,26 @@
 
     <import resource="classpath*:test-db.xml"/>
 
+    <bean id="productService" class="com.product_categories.service.ProductServiceImpl">
+        <constructor-arg ref="productDao"/>
+    </bean>
+
+    <bean id="productDao" class="com.product_categories.dao.ProductDaoImpl">
+        <constructor-arg ref="namedParameterJdbcTemplate"/>
+    </bean>
+
+    <bean id="categoryService" class="com.product_categories.service.CategoryServiceImpl">
+        <constructor-arg ref="categoryDao"/>
+    </bean>
+
+    <bean id="categoryDao" class="com.product_categories.dao.CategoryDaoImpl">
+        <constructor-arg ref="namedParameterJdbcTemplate"/>
+    </bean>
+
+    <bean id="namedParameterJdbcTemplate" class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
+        <constructor-arg name="dataSource" ref="dataSource"/>
+    </bean>
+
 
     <!-- Thymeleaf Template Resolver -->
     <bean id="templateResolver"

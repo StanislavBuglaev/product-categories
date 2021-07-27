@@ -1,17 +1,22 @@
-package com.product_categories;
+package com.product_categories.model;
 
 public class Product {
-    private int productId;
+    private Integer productId;
     private String productName;
-    private double productPrice;
-    private int categoryId;
+    private String categoryName;
+    private Double productPrice;
+    private Integer categoryId;
 
 
-    public int getProductId() {
+    public Product() {
+    }
+
+
+    public Integer getProductId() {
         return productId;
     }
 
-    public void setProductId(int productId) {
+    public void setProductId(Integer productId) {
         this.productId = productId;
     }
 
@@ -23,20 +28,28 @@ public class Product {
         this.productName = productName;
     }
 
-    public double getProductPrice() {
+    public Double getProductPrice() {
         return productPrice;
     }
 
-    public void setProductPrice(double productPrice) {
+    public void setProductPrice(Double productPrice) {
         this.productPrice = productPrice;
     }
 
-    public int getCategoryId() {
+    public Integer getCategoryId() {
         return categoryId;
     }
 
-    public void setCategoryId(int categoryId) {
+    public void setCategoryId(Integer categoryId) {
         this.categoryId = categoryId;
+    }
+
+    public String getCategoryName() {
+        return categoryName;
+    }
+
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
     }
 
     @Override
@@ -44,6 +57,7 @@ public class Product {
         return "Product{" +
                 "productId=" + productId +
                 ", productName='" + productName + '\'' +
+                ", categoryName='" + categoryName + '\'' +
                 ", productPrice=" + productPrice +
                 ", categoryId=" + categoryId +
                 '}';

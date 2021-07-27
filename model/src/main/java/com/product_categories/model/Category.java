@@ -1,24 +1,18 @@
-package com.product_categories;
+package com.product_categories.model;
 
 public class Category {
-    private int categoryId;
+    private Integer categoryId;
     private String categoryName;
-    private int quantityOfGoods;
+    private Integer quantityOfGoods;
 
     public Category() {
     }
 
-    public Category(int categoryId, String categoryName, int quantityOfGoods) {
-        this.categoryId = categoryId;
-        this.categoryName = categoryName;
-        this.quantityOfGoods = quantityOfGoods;
-    }
-
-    public int getCategoryId() {
+    public Integer getCategoryId() {
         return categoryId;
     }
 
-    public void setCategoryId(int categoryId) {
+    public void setCategoryId(Integer categoryId) {
         this.categoryId = categoryId;
     }
 
@@ -30,11 +24,11 @@ public class Category {
         this.categoryName = categoryName;
     }
 
-    public int getQuantityOfGoods() {
+    public Integer getQuantityOfGoods() {
         return quantityOfGoods;
     }
 
-    public void setQuantityOfGoods(int quantityOfGoods) {
+    public void setQuantityOfGoods(Integer quantityOfGoods) {
         this.quantityOfGoods = quantityOfGoods;
     }
 

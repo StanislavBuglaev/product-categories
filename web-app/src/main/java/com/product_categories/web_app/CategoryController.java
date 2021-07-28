@@ -36,7 +36,7 @@ public class CategoryController {
     }
 
     @PostMapping(value = "/addCategory")
-    public String addCategory(Category category) {
+    public final String addCategory(Category category) {
         categoryService.create(category);
         return "redirect:/categories";
     }
@@ -56,7 +56,7 @@ public class CategoryController {
     }
 
     @PostMapping(value = "/editCategory/{id}")
-    public String updateCategory(Category category) {
+    public final String updateCategory(Category category) {
             categoryService.update(category);
             return "redirect:/categories";
         }

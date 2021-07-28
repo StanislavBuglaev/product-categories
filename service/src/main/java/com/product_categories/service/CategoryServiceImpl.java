@@ -3,11 +3,13 @@ package com.product_categories.service;
 import com.product_categories.model.Category;
 import com.product_categories.dao.CategoryDao;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
 
 @Service
+@Transactional
 public class CategoryServiceImpl implements CategoryService{
 
     private final CategoryDao categoryDao;
